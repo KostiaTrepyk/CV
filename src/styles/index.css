@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Lato, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-y: scroll;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+:root::-webkit-scrollbar {
+    width: 10px;
+}
+
+:root::-webkit-scrollbar-track {
+    background-color: rgb(30, 30, 30);
+}
+
+:root::-webkit-scrollbar-thumb {
+    height: 56px;
+    border-radius: 8px;
+    background-clip: content-box;
+    background-color: rgb(60, 60, 60);
+}
+
+:root::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(50, 50, 50);
+}

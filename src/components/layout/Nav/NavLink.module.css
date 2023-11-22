@@ -1,0 +1,29 @@
+.NavLink {
+    text-align: center;
+    width: "100%";
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-block: 4px;
+    padding-inline: 16px;
+    color: inherit;
+    text-decoration: none;
+    background: linear-gradient(
+            to right,
+            rgba(100, 200, 200, 0),
+            rgba(100, 200, 200, 0)
+        ),
+        linear-gradient(
+            to right,
+            rgba(255, 166, 0, 1),
+            rgba(255, 55, 0, 1),
+            rgba(200, 100, 0, 1)
+        );
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.NavLink[aria-current="page"] {
+    background-size: 0 0.1em, 100% 0.1em;
+}

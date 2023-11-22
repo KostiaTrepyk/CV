@@ -1,0 +1,113 @@
+.carousel {
+    height: 100%;
+    aspect-ratio: 40/37;
+    position: relative;
+    user-select: none;
+}
+
+.currentSlide {
+    background-color: #000;
+    box-shadow: inset 0px 0px 20px #fff3, 2px 5px 30px #000a;
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 100;
+    position: absolute;
+    height: 90%;
+    aspect-ratio: 1/1;
+    top: 0;
+    left: 0;
+}
+.currentSlide::after {
+    content: "";
+    display: block;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    background-image: linear-gradient(0deg, var(--color) 0%, #0000 60%);
+}
+
+.nextSlide {
+    background-color: #000;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: absolute;
+    height: 85%;
+    aspect-ratio: 1/1;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+
+    outline-color: rgba(0, 255, 170, 0);
+    outline-width: 0rem;
+    outline-style: solid;
+
+    transition: outline-color 0.3s ease-out, outline-width 0.1s ease-out;
+}
+.nextSlide:hover {
+    outline-color: var(--color);
+    outline-width: 0.25rem;
+}
+.nextSlide:active {
+    outline-color: var(--color);
+}
+.nextSlide[data-disabled="true"]:hover {
+    cursor: default;
+    outline-color: rgb(115, 115, 115);
+}
+.nextSlide::after {
+    content: "";
+    display: block;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    background-image: linear-gradient(0deg, var(--color) 0%, #0000 60%);
+}
+
+.indicators {
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    gap: 0.5rem;
+    bottom: 3%;
+    left: 50%;
+    translate: -50% 0 0;
+}
+
+.indicator {
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    height: 12px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in, scale 0.3s ease-out;
+    filter: brightness(150%);
+    box-shadow: inset 0 0 1px white;
+    border: 3px solid #444;
+    cursor: pointer;
+
+    outline-offset: 0.2rem;
+    outline-color: var(--color);
+    outline-style: solid;
+    outline-width: 0px;
+}
+.indicator:focus-visible {
+    outline-width: 2px;
+}
+.indicator[data-disabled="true"] {
+    scale: 0.7;
+}
+.indicator[data-active="true"] {
+    border: 2px solid #444;
+    opacity: 1;
+    background-color: var(--color);
+}
