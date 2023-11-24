@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import { Box, Container, Grid, Paper, Stack, Typography } from "@mui/material";
 import Tilt from "react-parallax-tilt";
+import { primary } from "core/Theme/theme";
 
 import SkillsList, { Skill } from "components/Lists/SkillsList/SkillsList";
 
@@ -14,8 +15,9 @@ import TailwindCSSIcon from "assets/icons/tailwindcss.svg";
 import GitHubIcon from "assets/icons/github.svg";
 import NestJsIcon from "assets/icons/nestjs.svg";
 import TypescriptIcon from "assets/icons/typescript.svg";
+
 import a from "assets/a.svg";
-import { primary } from "core/Theme/theme";
+import myImage from "assets/myImage.png";
 
 interface AboutSectionProps {}
 
@@ -89,7 +91,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
                             alignItems: "center",
                             flexDirection: { sm: "row", xs: "column" },
                             textAlign: { sm: "left", xs: "center" },
-                            gap: 1,
+                            gap: 2,
                             padding: 3,
                             mb: 2,
                         }}
@@ -98,12 +100,12 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
                         <Box
                             component="img"
                             sx={{
-                                height: { sm: "6rem", xs: "6rem" },
-                                backgroundColor: "grey",
+                                height: { sm: "7rem", xs: "7rem" },
+                                bgcolor: "#151515",
                                 aspectRatio: "1/1",
                                 borderRadius: "50%",
                             }}
-                            src="/asd"
+                            src={myImage}
                             alt=""
                         ></Box>
 
