@@ -238,7 +238,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
                             knowledge in the field of IT, which significantly
                             accelerated my learning process. However, I had to
                             learn most of it on my own, which taught me to
-                            search for information and solve issues on my own.
+                            search for information and solve issues without others help.
                         </Typography>
                     </Paper>
                 </Grid>
