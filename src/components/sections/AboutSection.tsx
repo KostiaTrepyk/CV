@@ -16,6 +16,7 @@ import NestJsIcon from "assets/icons/nestjs.svg";
 import TypescriptIcon from "assets/icons/typescript.svg";
 import CoffeeIcon from "assets/icons/coffee.svg";
 import StructureIcon from "assets/icons/structure.svg";
+import ElectronIcon from "assets/icons/electron.svg";
 
 import a from "assets/a.svg";
 import notMyImage from "assets/notMyImage.png";
@@ -30,12 +31,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
     { iconSrc: ReactIcon, label: "React" },
     { iconSrc: ReduxIcon, label: "Redux" },
     { iconSrc: MUIIcon, label: "Material UI" },
-    { iconSrc: FramerIcon, label: "Framer Motion" },
-    { label: "Data structures", iconSrc: StructureIcon },
-    {
-      label: "Problem solving",
-      iconSrc: CoffeeIcon,
-    },
+    { label: "Problem solving", iconSrc: CoffeeIcon },
     { iconSrc: GitHubIcon, label: "Git" },
     { iconSrc: NestJsIcon, label: "NestJs" },
     { iconSrc: TypescriptIcon, label: "Typescript" },
@@ -45,43 +41,16 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
   const codingSince = [
     { date: new Date(2019, 7), label: "HTML" },
     { date: new Date(2019, 7), label: "CSS" },
-    {
-      date: new Date(2020, 2),
-      label: "JavaScript",
-    },
-    {
-      date: new Date(2023, 3),
-      label: "TypeScript",
-    },
-    {
-      date: new Date(2023, 1),
-      label: "React",
-    },
-    {
-      date: new Date(2023, 2),
-      label: "Redux",
-    },
-    {
-      date: new Date(2023, 3),
-      label: "NestJs",
-    },
+    { date: new Date(2022, 2), label: "JavaScript" },
+    { date: new Date(2023, 3), label: "TypeScript" },
+    { date: new Date(2023, 1), label: "React" },
+    { date: new Date(2023, 2), label: "Redux" },
+    { date: new Date(2023, 3), label: "NestJs" },
   ];
 
   return (
-    <Container
-      sx={{
-        py: { sm: 4, xs: 2 },
-      }}
-      component="section"
-      ref={ref}
-    >
-      <Grid
-        sx={{
-          mt: 2,
-        }}
-        container
-        spacing={2}
-      >
+    <Container sx={{ py: { sm: 4, xs: 2 } }} component="section" ref={ref}>
+      <Grid sx={{ mt: 2 }} container spacing={2}>
         <Grid item xs={12}>
           <Paper
             sx={{
@@ -197,8 +166,8 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
             <Typography
               sx={{
                 pb: 1.5,
-                fontSize: "1rem",
-                letterSpacing: "0.1rem",
+                fontSize: "0.95rem",
+                letterSpacing: "0.05rem",
               }}
             >
               Hello, my name is Kostia.
@@ -206,30 +175,27 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
             <Typography
               sx={{
                 py: 1.5,
-                fontSize: "1rem",
-                lineHeight: "1.4rem",
+                fontSize: "0.95rem",
+                lineHeight: "1.5rem",
                 letterSpacing: "0.05rem",
               }}
             >
-              I have dedicated countless hours to coding over the past year.
-              With consistent daily coding practice, I have continuously
-              sharpened my skills and expanded my knowledge in front-end and
-              back-end development.
+              I'm a full-stack developer specializing in React, Redux, NestJs,
+              and Typescript. My journey includes crafting innovative pet
+              projects that showcase my commitment to seamless user experiences.
+              With expertise in both front-end and back-end technologies, I
+              bring a unique blend of creativity and technical prowess to every
+              project.
             </Typography>
-
             <Typography
               sx={{
                 py: 1.5,
-                fontSize: "1rem",
-                lineHeight: "1.4rem",
+                fontSize: "0.95rem",
+                lineHeight: "1.5rem",
                 letterSpacing: "0.05rem",
               }}
             >
-              Studying at the technical school gave me versatile knowledge in
-              the field of IT, which significantly accelerated my learning
-              process. However, I had to learn most of it on my own, which
-              taught me to search for information and solve issues without
-              others help.
+              I also want to learn NextJs and testing.
             </Typography>
           </Paper>
         </Grid>
