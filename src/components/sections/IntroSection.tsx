@@ -10,12 +10,10 @@ import Carousel from "components/Carousel/Carousel";
 import mlib1 from "assets/carousel/mlib1.png";
 import mlib2 from "assets/carousel/mlib2.png";
 import mlib3 from "assets/carousel/mlib3.png";
-import mlib4 from "assets/carousel/mlib4.png";
-import cloudstorage1 from "assets/carousel/cloudstorage1.png";
-import cloudstorage2 from "assets/carousel/cloudstorage2.png";
-import cloudstorageserver1 from "assets/carousel/cloudstorageserver1.png";
-import cloudstorageserver2 from "assets/carousel/cloudstorageserver2.png";
+import cloudStorage from "assets/carousel/cloud-storage.png";
 import chat from "assets/carousel/chat.png";
+import passwordGenerator from "assets/carousel/password-generator.png";
+import todoList from "assets/carousel/todo-list.jpg";
 
 const MCarousel = motion(Carousel);
 const MTypography = motion(Typography);
@@ -32,11 +30,9 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>((_, ref) => {
     { src: mlib1, alt: "Movie Library 1" },
     { src: mlib2, alt: "Movie Library 2" },
     { src: mlib3, alt: "Movie Library 3" },
-    { src: mlib4, alt: "Movie Library 4" },
-    { src: cloudstorage1, alt: "Cloud Storage 1" },
-    { src: cloudstorage2, alt: "Cloud Storage 2" },
-    { src: cloudstorageserver1, alt: "Cloud Storage server 1" },
-    { src: cloudstorageserver2, alt: "Cloud Storage server 2" },
+    { src: cloudStorage, alt: "Cloud Storage" },
+    { src: passwordGenerator, alt: "Password generator" },
+    { src: todoList, alt: "Todo list" },
     { src: chat, alt: "Chat" },
   ];
 
