@@ -39,8 +39,8 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
   ];
 
   const codingSince = [
-    { date: new Date(2019, 7), label: "HTML" },
-    { date: new Date(2019, 7), label: "CSS" },
+    { date: new Date(2020, 7), label: "HTML" },
+    { date: new Date(2020, 7), label: "CSS" },
     { date: new Date(2022, 2), label: "JavaScript" },
     { date: new Date(2023, 3), label: "TypeScript" },
     { date: new Date(2023, 1), label: "React" },
@@ -218,7 +218,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
               }}
               variant="h3"
             >
-              Coding since
+              Coding experience
             </Typography>
 
             <Stack flexDirection="row" flexWrap="wrap" gap={2}>
