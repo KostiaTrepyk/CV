@@ -153,6 +153,7 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>((_, ref) => {
                 cursor: "pointer",
               }}
               to={"/contact"}
+              unstable_viewTransition
             >
               <Box
                 sx={{
