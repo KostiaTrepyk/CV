@@ -29,11 +29,12 @@ const MeSection = () => {
 					p: 4,
 					px: 9,
 					borderRadius: 5,
-					ml: { md: 4, xs: 0 },
+					ml: { lg: 4, xs: 0 },
+					mx: { sm: 0, xs: 2 },
 					maxWidth: 520,
 					position: "relative",
 					color: "#ddd",
-					boxShadow: 'inset -1px 3px 10px 0.5px #fff1'
+					boxShadow: "inset -1px 3px 10px 0.5px #fff1",
 				}}
 				elevation={5}
 			>
