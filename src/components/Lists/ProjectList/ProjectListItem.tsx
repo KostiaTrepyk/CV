@@ -1,7 +1,10 @@
-import { forwardRef } from "react";
-import { Link } from "react-router-dom";
-import { Box, Paper, Stack, Typography } from "@mui/material";
+import { forwardRef, useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
 import { type Variants, motion } from "framer-motion";
+import { type Project } from "data/projects";
+
+import ProjectDescriptionDialog from "./ProjectDescriptionDialog";
+import ProjectTechList from "./ProjectTechList";
 
 const MBox = motion(Box);
 
@@ -20,25 +23,27 @@ const animations: Variants = {
 	},
 };
 
-export interface Project {
-	title: string;
-	description: string;
-	techs: string[];
-	link: string;
-	marked?: boolean;
-}
-
 interface ProjectListItemProps {
 	project: Project;
 }
 
 const ProjectListItem = forwardRef<HTMLLIElement, ProjectListItemProps>(
 	({ project }, ref) => {
+		const [isDialogOpened, setDialogOpened] = useState<boolean>(false);
+
+		const openDialog = () => {
+			setDialogOpened(true);
+		};
+
+		const closeDialog = () => {
+			setDialogOpened(false);
+		};
+
 		return (
 			<MBox
 				initial="initial"
 				whileInView="inView"
-				whileHover={"hover"}
+				whileHover="hover"
 				variants={animations}
 				transition={{
 					ease: "easeOut",
@@ -80,68 +85,31 @@ const ProjectListItem = forwardRef<HTMLLIElement, ProjectListItemProps>(
 							color: "text.secondary",
 						}}
 					>
-						{project.description}
+						{project.previewDescription}
 					</Typography>
 				</Box>
 
-				<Stack
+				<ProjectTechList techs={project.techs} />
+
+				<Button
 					sx={{
-						listStyle: "none",
-						margin: 0,
-						padding: 0,
-						display: "grid",
-						gridTemplateColumns: "repeat(auto-fit, minmax(110px,1fr))",
-						gridAutoRows: "1fr",
-						gap: "0.5rem",
+						width: "fit-content",
+						mx: "auto",
+						mt: "auto",
+						borderRadius: "2rem",
 					}}
-					component="ul"
+					variant="contained"
+					size="large"
+					onClick={openDialog}
 				>
-					{project.techs.map((tech) => (
-						<Paper
-							key={tech}
-							sx={{
-								textAlign: "center",
-								padding: 1.5,
-								borderRadius: "1rem",
-								boxShadow: 0,
-							}}
-							elevation={10}
-							component="li"
-						>
-							<Typography>{tech}</Typography>
-						</Paper>
-					))}
-				</Stack>
+					Check out
+				</Button>
 
-				<Link
-					style={{
-						textDecoration: "none",
-						marginTop: "auto",
-						marginInline: "auto",
-
-						cursor: "pointer",
-					}}
-					to={project.link}
-					target="_blank"
-				>
-					<Box
-						sx={{
-							display: "block",
-							textTransform: "uppercase",
-							paddingBlock: "1rem",
-							paddingInline: "1.2rem",
-							borderRadius: "1.5rem",
-							fontWeight: 600,
-							fontSize: "0.9rem",
-
-							color: "primary.contrastText",
-							backgroundColor: "primary.main",
-						}}
-						component="span"
-					>
-						Check out
-					</Box>
-				</Link>
+				<ProjectDescriptionDialog
+					project={project}
+					open={isDialogOpened}
+					onClose={closeDialog}
+				/>
 			</MBox>
 		);
 	}
