@@ -3,7 +3,7 @@ import * as THREE from "three";
 export class RainAnimation {
 	private size: { x: number; y: number };
 	private raindropsCount: number;
-	private scene = new THREE.Scene();
+	private scene: THREE.Scene;
 	private cameraPositionZ: number;
 	private camera: THREE.PerspectiveCamera;
 	private maxPosition: THREE.Vector2;
@@ -39,6 +39,7 @@ export class RainAnimation {
 			0.1,
 			1000
 		);
+		this.scene = new THREE.Scene();
 		this.maxPosition = this.camera.getViewSize(
 			this.cameraPositionZ,
 			new THREE.Vector2()
@@ -118,8 +119,7 @@ export class RainAnimation {
 		THREE.MeshBasicMaterial,
 		THREE.Object3DEventMap
 	> {
-		const geometry = new THREE.PlaneGeometry(0.005, 0.02);
-		// const geometry = new THREE.SphereGeometry(0.002);
+		const geometry = new THREE.PlaneGeometry(0.003, 0.015);
 		const material = new THREE.MeshBasicMaterial({
 			color: this.rainSettings.color,
 		});

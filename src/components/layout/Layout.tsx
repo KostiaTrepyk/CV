@@ -28,22 +28,21 @@ const Layout = () => {
 	}, [isAlertDisabled]);
 
 	return (
-		<Box
-			sx={{
-				bgcolor: "background.default",
-				color: "text.primary",
-				minHeight: "100dvh",
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "space-between",
-				overflowX: "hidden",
-			}}
-		>
-			<Rain>
+		<Box sx={{ bgcolor: "background.default", color: "text.primary" }}>
+			<Rain />
+
+			<Box
+				sx={{
+					minHeight: "100dvh",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-between",
+				}}
+			>
 				<Nav />
 				<Outlet />
 				<Footer />
-			</Rain>
+			</Box>
 
 			<Snackbar
 				anchorOrigin={{ vertical: "top", horizontal: "center" }}

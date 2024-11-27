@@ -1,11 +1,12 @@
-import { Box } from "@mui/material";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Box, BoxProps } from "@mui/material";
+
 import { RainAnimation } from "threejs-animations/rain";
 
-interface RainProps extends React.PropsWithChildren {}
+interface RainProps extends BoxProps<"canvas"> {}
 
-const Rain: React.FC<RainProps> = ({ children }) => {
+const Rain: React.FC<RainProps> = (props) => {
 	const location = useLocation();
 
 	const [isAdded, setAdded] = useState<boolean>(false);
@@ -59,15 +60,19 @@ const Rain: React.FC<RainProps> = ({ children }) => {
 	}, [isAdded, getCurrentBodySize]);
 
 	return (
-		<>
-			<Box
-				component="canvas"
-				ref={rainCanvasRef}
-				sx={{ position: "absolute", top: 0, left: 0 }}
-				aria-hidden
-			/>
-			{children}
-		</>
+		<Box
+			aria-hidden
+			{...props}
+			sx={{
+				position: "absolute",
+				top: 0,
+				left: 0,
+				pointerEvents: "none",
+				...props.sx,
+			}}
+			component="canvas"
+			ref={rainCanvasRef}
+		/>
 	);
 };
 
