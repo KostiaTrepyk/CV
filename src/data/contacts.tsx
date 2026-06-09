@@ -1,4 +1,4 @@
-import { email, gitHubLink, linkedInLink, telegramLink } from "./links";
+import { links } from "./links";
 
 import TelegramIcon from "@mui/icons-material/Telegram";
 import EmailIcon from "@mui/icons-material/Email";
@@ -10,22 +10,22 @@ import { SvgIconTypeMap } from "@mui/material";
 export const contacts: Contact[] = [
     {
         label: "GitHub",
-        href: gitHubLink,
+        href: links.contact.github,
         icon: GitHubIcon,
     },
     {
         label: "Email",
-        href: "mailto:" + email,
+        href: "mailto:" + links.contact.email,
         icon: EmailIcon,
     },
     {
         label: "LinkedIn",
-        href: linkedInLink,
+        href: links.contact.linkedIn,
         icon: LinkedInIcon,
     },
     {
         label: "Telegram",
-        href: telegramLink,
+        href: links.contact.telegram,
         icon: TelegramIcon,
     },
 ];

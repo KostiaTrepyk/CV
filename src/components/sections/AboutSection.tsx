@@ -1,14 +1,13 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { Box, Container, Grid, Paper, Stack, Typography } from "@mui/material";
-import Tilt from "react-parallax-tilt";
-import { primary } from "core/Theme/theme";
+import { Box, Container, Grid, Paper, Typography } from "@mui/material";
 
 import SkillsList from "components/Lists/SkillsList/SkillsList";
 
 import bg from "assets/bg.svg";
 import notMyImage from "assets/notMyImage.png";
-import { codingSince, skills } from "data/myData";
+import { skills } from "data/skills";
+import { PersonalProjectsSection } from "./PersonalProjectsSection";
 
 const MContainer = motion(Container);
 
@@ -88,7 +87,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
 									color: "text.disabled",
 								}}
 							>
-								Learning is a treasure that follows its owner everywhere.
+								Always learning, building the web of tomorrow.
 							</Typography>
 						</Box>
 					</Paper>
@@ -143,125 +142,35 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
 						</Typography>
 						<Typography
 							sx={{
-								pb: 1.5,
 								fontSize: "0.95rem",
 								letterSpacing: "0.05rem",
 							}}
 						>
-							Hello, my name is Kostia.
+							Hello,
 						</Typography>
 						<Typography
 							sx={{
-								py: 1.5,
+								mt: 1,
 								fontSize: "0.95rem",
 								lineHeight: "1.5rem",
 								letterSpacing: "0.05rem",
+								textAlign: "justify",
 							}}
 						>
-							I am a self-taught full-stack developer specializing in React,
-							Redux, NestJs, and TypeScript. My journey includes developing pet
-							projects that highlight my dedication to creating seamless user
-							experiences. With expertise in both front-end and back-end
-							technologies, I bring a unique blend of creativity and technical
-							proficiency to every project.
+							I am Kostia, an ambitious Fullstack Developer with a
+							passion for building efficient and scalable web
+							applications. My expertise spans the full modern
+							JavaScript ecosystem, focusing on React for the
+							frontend and NestJS for the backend. Driven by
+							continuous learning, I have successfully engineered
+							multiple pet projects, honing my skills in creating
+							robust architectures and seamless user experiences.
 						</Typography>
 					</Paper>
 				</Grid>
 
 				<Grid item md={4} xs={12}>
-					<Paper
-						sx={{
-							height: "100%",
-							paddingBlock: { sm: 4, xs: 3 },
-							paddingInline: { sm: 4, xs: 3 },
-							borderRadius: "1.5rem",
-							boxShadow: "inset 0px 0px 6px #0004",
-						}}
-						elevation={5}
-					>
-						<Typography
-							sx={{
-								fontSize: "1.3rem",
-								fontWeight: 600,
-								marginBottom: "1rem",
-							}}
-							variant="h3"
-						>
-							Coding experience
-						</Typography>
-
-						<Stack flexDirection="row" flexWrap="wrap" gap={2}>
-							{codingSince.map((item, index) => {
-								const now = new Date();
-
-								const year = now.getFullYear() - item.date.getFullYear();
-
-								const month = now.getMonth() - item.date.getMonth();
-
-								let text: string = "";
-
-								if (year > 0) {
-									if (year !== 1) text = `${year} years`;
-									else text = `${year} year`;
-								}
-
-								if (text.length > 0 && month > 0) text += ", ";
-
-								if (month > 0) {
-									if (month !== 1) text += `${month} months`;
-									else text += `${month} month`;
-								}
-
-								return (
-									<Tilt
-										key={index}
-										style={{
-											height: "100%",
-											flex: "1 1 auto",
-										}}
-										tiltEnable={false}
-										glareEnable={true}
-										glareMaxOpacity={0.3}
-										glareBorderRadius="1rem"
-										glareColor={primary}
-										glarePosition="all"
-										transitionSpeed={5000}
-									>
-										<Paper
-											sx={{
-												flex: "1 1 80px",
-												padding: 2,
-												borderRadius: "1rem",
-												boxShadow:
-													"inset 1px 1px 2px #fff1, 2px 5px 10px #0003",
-											}}
-											elevation={10}
-										>
-											<Typography
-												sx={{
-													color: "primary.light",
-													fontWeight: 700,
-													textAlign: "center",
-													marginBottom: "0.2rem",
-												}}
-											>
-												{item.label}
-											</Typography>
-
-											<Typography
-												sx={{
-													textAlign: "center",
-													color: "text.secondary",
-												}}
-											>
-												{text}
-											</Typography>
-										</Paper>
-									</Tilt>
-								);
-							})}
-						</Stack>
-					</Paper>
+					<PersonalProjectsSection />
 				</Grid>
 			</Grid>
 		</MContainer>

@@ -89,7 +89,22 @@ const ProjectListItem = forwardRef<HTMLLIElement, ProjectListItemProps>(
 					</Typography>
 				</Box>
 
-				<ProjectTechList techs={project.techs} />
+				<Box>
+					<ProjectTechList techs={project.techs.slice(0, 6)} />
+
+					{project.techs.length > 6 && (
+						<Typography
+							sx={{
+								letterSpacing: "0.5rem",
+								color: "text.secondary",
+								textAlign: "center",
+								fontSize: "1.25rem",
+							}}
+						>
+							•••
+						</Typography>
+					)}
+				</Box>
 
 				<Button
 					sx={{
@@ -112,7 +127,7 @@ const ProjectListItem = forwardRef<HTMLLIElement, ProjectListItemProps>(
 				/>
 			</MBox>
 		);
-	}
+	},
 );
 
 export default ProjectListItem;

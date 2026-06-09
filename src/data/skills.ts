@@ -24,12 +24,3 @@ export const skills: Skill[] = [
 	{ label: "MySQL" },
 	{ label: "Docker" },
 ];
-
-export const codingSince = [
-	{ date: new Date(2020, 7), label: "HTML" },
-	{ date: new Date(2020, 7), label: "CSS" },
-	{ date: new Date(2021, 5), label: "JavaScript" },
-	{ date: new Date(2023, 1), label: "TypeScript" },
-	{ date: new Date(2022, 9), label: "React" },
-	{ date: new Date(2022, 11), label: "NestJs" },
-];

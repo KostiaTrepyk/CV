@@ -11,7 +11,7 @@ import {
 	Typography,
 	styled,
 } from "@mui/material";
-import { gitHubLink } from "data/links";
+import { links as allLinks } from "data/links";
 
 import NavLink, { ILink } from "./NavLink";
 import { motion } from "framer-motion";
@@ -22,7 +22,7 @@ interface NavProps {}
 
 const links: ILink[] = [
 	{ href: "/about", label: "About" },
-	{ href: gitHubLink, label: "GitHub", target: "_blank" },
+	{ href: allLinks.contact.github, label: "GitHub", target: "_blank" },
 	{ href: "/contact", label: "Contact" },
 ];
 
@@ -65,7 +65,7 @@ const Nav: React.FC<NavProps> = () => {
 						}}
 						variant="h1"
 					>
-						Spectrum CV
+						CV
 					</Typography>
 				</Link>
 

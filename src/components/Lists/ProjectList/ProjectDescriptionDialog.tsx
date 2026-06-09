@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { Project } from "data/projects";
+import AppLink from "components/ui/Link";
 
 interface ProjectDescriptionDialogProps extends DialogProps {
 	project: Project;
@@ -44,7 +45,13 @@ const ProjectDescriptionDialog: React.FC<ProjectDescriptionDialogProps> = ({
 			<Divider />
 
 			<Box
-				sx={{ display: "flex", flexDirection: "column", gap: 2, px: 4, mt: 3 }}
+				sx={{
+					display: "flex",
+					flexDirection: "column",
+					gap: 2,
+					px: 4,
+					mt: 3,
+				}}
 			>
 				{project.description.map((description) => (
 					<Box key={description.text}>
@@ -56,7 +63,7 @@ const ProjectDescriptionDialog: React.FC<ProjectDescriptionDialogProps> = ({
 							}}
 							variant="h4"
 						>
-							{description.title}
+							{description.subtitle}
 						</Typography>
 
 						<Typography
@@ -91,6 +98,15 @@ const ProjectDescriptionDialog: React.FC<ProjectDescriptionDialogProps> = ({
 						</Paper>
 					))}
 				</Stack>
+				
+				<Box>
+					<Typography>
+						GitHub link:{" "}
+						<AppLink to={project.githubLink} target="_blank">
+							{project.githubLink}
+						</AppLink>
+					</Typography>
+				</Box>
 			</Box>
 
 			<IconButton

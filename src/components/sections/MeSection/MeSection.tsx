@@ -1,14 +1,12 @@
-import { Box, Container, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Container } from "@mui/material";
 
 import { IQuote, quotes } from "data/quotes";
-import NotMyImage from "assets/notMyImage.png";
 import Quote from "./Quote";
 import AboutMe from "./AboutMe";
 
 const MeSection = () => {
 	const choosedPhrase: IQuote = quotes.at(
-		Math.round(Math.random() * (quotes.length - 1))
+		Math.round(Math.random() * (quotes.length - 1)),
 	)!;
 
 	return (

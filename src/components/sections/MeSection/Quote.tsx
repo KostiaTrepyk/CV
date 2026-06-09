@@ -11,10 +11,10 @@ const Quote: React.FC<QuoteProps> = ({ quote }) => {
 	return (
 		<Paper
 			sx={{
-				p: 4,
+				py: 4,
 				px: 9,
 				borderRadius: 5,
-				ml: { lg: 4, xs: 0 },
+				mr: { lg: 4, xs: 0 },
 				mx: { sm: 0, xs: 2 },
 				maxWidth: 520,
 				position: "relative",
@@ -24,7 +24,11 @@ const Quote: React.FC<QuoteProps> = ({ quote }) => {
 			elevation={5}
 		>
 			<Typography
-				sx={{ fontSize: "1.3rem", fontStyle: "italic", fontWeight: 400 }}
+				sx={{
+					fontSize: "1.3rem",
+					fontStyle: "italic",
+					fontWeight: 400,
+				}}
 			>
 				{quote.quote}
 			</Typography>
