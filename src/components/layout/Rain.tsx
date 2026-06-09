@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { Box, BoxProps } from "@mui/material";
 
@@ -8,8 +8,6 @@ interface RainProps extends BoxProps<"canvas"> {}
 
 const Rain: React.FC<RainProps> = (props) => {
 	const location = useLocation();
-
-	const [isAdded, setAdded] = useState<boolean>(false);
 	const rainCanvasRef = useRef<HTMLCanvasElement>(null);
 	const rainInstanceRef = useRef<RainAnimation>();
 
@@ -26,6 +24,7 @@ const Rain: React.FC<RainProps> = (props) => {
 		rainInstanceRef.current.resize(newSize);
 	}, [getCurrentBodySize]);
 
+	// Отслеживаем изменение размера окна
 	useEffect(() => {
 		window.addEventListener("resize", resize);
 		return () => {
@@ -33,31 +32,41 @@ const Rain: React.FC<RainProps> = (props) => {
 		};
 	}, [resize]);
 
+	// Вызываем resize при смене маршрута
 	useEffect(() => {
 		resize();
 	}, [location.pathname, resize]);
 
+	// Инициализация Three.js
 	useEffect(() => {
-		if (rainCanvasRef.current && isAdded === false) {
-			setAdded(true);
-			const canvas = rainCanvasRef.current;
+		if (!rainCanvasRef.current) return;
 
-			const size = getCurrentBodySize();
-			const rainSettings: RainAnimation["rainSettings"] = {
-				angle: 10,
-				color: 0x666666,
-				countPer100Pixels: 1,
-				speed: 0.01,
-			};
+		const canvas = rainCanvasRef.current;
+		const size = getCurrentBodySize();
 
-			rainInstanceRef.current = new RainAnimation({
-				canvas,
-				size,
-				rainSettings,
-			});
-			rainInstanceRef.current.init();
-		}
-	}, [isAdded, getCurrentBodySize]);
+		const rainSettings: RainAnimation["rainSettings"] = {
+			angle: 10,
+			color: 0x666666,
+			countPer100Pixels: 1,
+			speed: 0.01,
+		};
+
+		// Создаем инстанс
+		const instance = new RainAnimation({
+			canvas,
+			size,
+			rainSettings,
+		});
+
+		rainInstanceRef.current = instance;
+		instance.init();
+
+		// Очистка при размонтировании
+		return () => {
+			instance.destroy();
+			rainInstanceRef.current = undefined;
+		};
+	}, [getCurrentBodySize]);
 
 	return (
 		<Box

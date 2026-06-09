@@ -53,31 +53,35 @@ const ProjectDescriptionDialog: React.FC<ProjectDescriptionDialogProps> = ({
 					mt: 3,
 				}}
 			>
-				{project.description.map((description) => (
-					<Box key={description.text}>
-						<Typography
-							sx={{
-								fontSize: 26,
-								letterSpacing: 0.5,
-								wordSpacing: 2,
-							}}
-							variant="h4"
-						>
-							{description.subtitle}
-						</Typography>
+				{project.description.map((description) => {
+					const key = project.title + description.subtitle;
 
-						<Typography
-							sx={{
-								fontSize: 16,
-								letterSpacing: 1,
-								wordSpacing: 1,
-							}}
-							variant="body1"
-						>
-							{description.text}
-						</Typography>
-					</Box>
-				))}
+					return (
+						<Box key={key}>
+							<Typography
+								sx={{
+									fontSize: 26,
+									letterSpacing: 0.5,
+									wordSpacing: 2,
+								}}
+								variant="h4"
+							>
+								{description.subtitle}
+							</Typography>
+
+							<Typography
+								sx={{
+									fontSize: 16,
+									letterSpacing: 1,
+									wordSpacing: 1,
+								}}
+								variant="body1"
+							>
+								{description.text}
+							</Typography>
+						</Box>
+					);
+				})}
 
 				<Stack direction="row" gap={2} flexWrap="wrap">
 					{project.techs.map((tech, i) => (
@@ -98,7 +102,7 @@ const ProjectDescriptionDialog: React.FC<ProjectDescriptionDialogProps> = ({
 						</Paper>
 					))}
 				</Stack>
-				
+
 				<Box>
 					<Typography>
 						GitHub link:{" "}
