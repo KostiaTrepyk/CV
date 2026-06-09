@@ -28,17 +28,16 @@ export const PersonalProjectsSection = ({ primary = "#ffffff" }) => {
 				Personal Projects
 			</Typography>
 
-			{/* Изменили flex-direction на column, чтобы карточки проектов шли списком сверху вниз */}
 			<Stack flexDirection="column" gap={2}>
-				{personalProjects.map((project, index) => (
+				{personalProjects.slice(0, 2).map((project, index) => (
 					<Tilt
 						key={index}
 						style={{
 							width: "100%",
 						}}
-						tiltEnable={false} // Оставляем false, как было в оригинале
+						tiltEnable={false}
 						glareEnable={true}
-						glareMaxOpacity={0.15} // Слегка уменьшил прозрачность блика для читаемости текста
+						glareMaxOpacity={0.15}
 						glareBorderRadius="1rem"
 						glareColor={primary}
 						glarePosition="all"
@@ -98,6 +97,15 @@ export const PersonalProjectsSection = ({ primary = "#ffffff" }) => {
 						</Paper>
 					</Tilt>
 				))}
+				<Typography
+					sx={{
+						ml: 2.5,
+						color: "text.secondary",
+						fontSize: "0.9rem",
+					}}
+				>
+					And more...
+				</Typography>
 			</Stack>
 		</Paper>
 	);
