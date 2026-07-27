@@ -16,8 +16,6 @@ import { links as allLinks } from "data/links";
 import NavLink, { ILink } from "./NavLink";
 import { motion } from "framer-motion";
 
-const MContainer = motion(Container);
-
 interface NavProps {}
 
 const links: ILink[] = [
@@ -35,7 +33,8 @@ const Nav: React.FC<NavProps> = () => {
 
 	return (
 		<>
-			<MContainer
+			<Container
+				component={motion.nav}
 				sx={{
 					position: "sticky",
 					top: 0,
@@ -50,13 +49,11 @@ const Nav: React.FC<NavProps> = () => {
 					boxShadow: (theme) =>
 						`0px 10px 25px 0px ${theme.palette.background.paper}, 0px 3px 5px 0px ${theme.palette.background.paper}`,
 				}}
-				// @ts-ignore
-				component="nav"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5 }}
 			>
-				<Link to="/" unstable_viewTransition>
+				<Link to="/" viewTransition>
 					<Typography
 						sx={{
 							fontSize: "1.5rem",
@@ -98,13 +95,9 @@ const Nav: React.FC<NavProps> = () => {
 				>
 					<Menu />
 				</IconButton>
-			</MContainer>
+			</Container>
 
-			<Drawer
-				open={isMenuOpened}
-				onClose={() => setIsMenuOpened(false)}
-				anchor="right"
-			>
+			<Drawer open={isMenuOpened} onClose={() => setIsMenuOpened(false)} anchor="right">
 				<Box
 					sx={{
 						width: 250,

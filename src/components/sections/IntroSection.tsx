@@ -87,11 +87,7 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>((_, ref) => {
 							component="span"
 							variant="inherit"
 						>
-							<AnimatedText
-								text={text2}
-								speed={0.055}
-								delay={text1.length * 0.055}
-							/>
+							<AnimatedText text={text2} speed={0.055} delay={text1.length * 0.055} />
 						</Typography>
 					</MTypography>
 
@@ -117,8 +113,7 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>((_, ref) => {
 						animate={{ opacity: [0, 0.2, 0.5, 1], x: 0 }}
 						transition={{
 							duration: 0.5,
-							delay:
-								(text1.length + text2.length + text3.length) * 0.055 + 1.25,
+							delay: (text1.length + text2.length + text3.length) * 0.055 + 1.25,
 						}}
 						sx={{
 							paddingInline: { sm: 0, xs: "10%" },
@@ -144,8 +139,7 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>((_, ref) => {
 							animate={{ opacity: [0, 0.2, 0.5, 1], x: 0 }}
 							transition={{
 								duration: 0.75,
-								delay:
-									(text1.length + text2.length + text3.length) * 0.055 + 1.75,
+								delay: (text1.length + text2.length + text3.length) * 0.055 + 1.75,
 							}}
 							style={{
 								width: "fit-content",
@@ -153,7 +147,7 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>((_, ref) => {
 								cursor: "pointer",
 							}}
 							to={"/contact"}
-							unstable_viewTransition
+							viewTransition
 						>
 							<Box
 								sx={{
@@ -202,8 +196,7 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>((_, ref) => {
 							animate={{ opacity: 1, x: 0 }}
 							transition={{
 								duration: 0.75,
-								delay:
-									(text1.length + text2.length + text3.length) * 0.055 + 2.25,
+								delay: (text1.length + text2.length + text3.length) * 0.055 + 2.25,
 							}}
 							color={primary}
 							autoplay

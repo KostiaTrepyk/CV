@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const MLink = motion(Link);
 const MBox = motion(Box);
 
-const MContainer = motion(Container);
 const iconButton: Variants = {
   initial: {
     rotateY: 0,
@@ -22,13 +21,12 @@ const iconButton: Variants = {
 
 const ContactSection = () => {
   return (
-    <MContainer
+    <Container
+      component={motion.section}
       sx={{
         display: "flex",
         flexDirection: "column",
       }}
-      // @ts-ignore
-      component="section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -130,7 +128,7 @@ const ContactSection = () => {
           ))}
         </List>
       </Box>
-    </MContainer>
+    </Container>
   );
 };
 

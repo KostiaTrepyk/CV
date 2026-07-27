@@ -9,16 +9,13 @@ import notMyImage from "assets/notMyImage.png";
 import { skills } from "data/skills";
 import { PersonalProjectsSection } from "./PersonalProjectsSection";
 
-const MContainer = motion(Container);
-
 interface AboutSectionProps {}
 
 const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
 	return (
-		<MContainer
+		<Container
+			component={motion.section}
 			sx={{ py: { sm: 4, xs: 2 } }}
-			// @ts-ignore
-			component="section"
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 0.5 }}
@@ -173,7 +170,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
 					<PersonalProjectsSection />
 				</Grid>
 			</Grid>
-		</MContainer>
+		</Container>
 	);
 });
 

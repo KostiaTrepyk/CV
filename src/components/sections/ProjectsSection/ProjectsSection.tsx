@@ -7,8 +7,6 @@ import { projects } from "data/projects";
 import ProjectList from "components/Lists/ProjectList/ProjectList";
 import ProjectListItem from "components/Lists/ProjectList/ProjectListItem";
 
-const MContainer = motion(Container);
-
 interface ProjectsSectionProps {}
 
 const ProjectsSection = forwardRef<HTMLElement, ProjectsSectionProps>(
@@ -16,12 +14,11 @@ const ProjectsSection = forwardRef<HTMLElement, ProjectsSectionProps>(
 		const topProjects = projects.slice(0, 3);
 
 		return (
-			<MContainer
+			<Container
+				component={motion.section}
 				sx={{
 					py: { sm: 4, xs: 2 },
 				}}
-				// @ts-ignore type error when wrapping component in 'motion' function
-				component="section"
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				transition={{ duration: 0.5 }}
@@ -64,7 +61,7 @@ const ProjectsSection = forwardRef<HTMLElement, ProjectsSectionProps>(
 						<ProjectListItem key={project.title} project={project} />
 					))}
 				</ProjectList>
-			</MContainer>
+			</Container>
 		);
 	}
 );

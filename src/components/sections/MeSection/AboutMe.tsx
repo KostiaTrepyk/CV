@@ -41,12 +41,7 @@ const AboutMe = () => {
 				<Typography width="fit-content" mb={1} variant="h4">
 					More about me
 				</Typography>
-				<Typography
-					fontSize="0.9rem"
-					width="fit-content"
-					mb={3}
-					variant="body1"
-				>
+				<Typography fontSize="0.9rem" width="fit-content" mb={3} variant="body1">
 					Click the button below to read more.
 				</Typography>
 
@@ -57,7 +52,7 @@ const AboutMe = () => {
 						cursor: "pointer",
 					}}
 					to={"/about"}
-					unstable_viewTransition
+					viewTransition
 				>
 					<Box
 						sx={{
