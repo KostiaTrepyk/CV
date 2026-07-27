@@ -11,18 +11,12 @@ const Wawes: React.FC<WawesProps> = ({ sx }) => {
 		<Box
 			sx={sx}
 			viewBox="0 0 1440 390"
-			preserveAspectRatio="none" 
+			preserveAspectRatio="none"
 			className="transition duration-300 ease-in-out delay-150"
 			component="svg"
 		>
 			<defs>
-				<linearGradient
-					id="gradient"
-					x1="50%"
-					y1="0%"
-					x2="50%"
-					y2="100%"
-				>
+				<linearGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%">
 					<stop offset="5%" stopColor={background}></stop>
 					<stop offset="95%" stopColor={primary}></stop>
 				</linearGradient>

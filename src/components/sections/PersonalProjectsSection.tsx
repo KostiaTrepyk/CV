@@ -47,8 +47,7 @@ export const PersonalProjectsSection = ({ primary = "#ffffff" }) => {
 							sx={{
 								padding: 2.5,
 								borderRadius: "1rem",
-								boxShadow:
-									"inset 1px 1px 2px #fff1, 2px 5px 10px #0003",
+								boxShadow: "inset 1px 1px 2px #fff1, 2px 5px 10px #0003",
 								display: "flex",
 								flexDirection: "column",
 								gap: 0.5,

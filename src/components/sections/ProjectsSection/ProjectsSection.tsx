@@ -9,61 +9,59 @@ import ProjectListItem from "components/Lists/ProjectList/ProjectListItem";
 
 interface ProjectsSectionProps {}
 
-const ProjectsSection = forwardRef<HTMLElement, ProjectsSectionProps>(
-	(_, ref) => {
-		const topProjects = projects.slice(0, 3);
+const ProjectsSection = forwardRef<HTMLElement, ProjectsSectionProps>((_, ref) => {
+	const topProjects = projects.slice(0, 3);
 
-		return (
-			<Container
-				component={motion.section}
+	return (
+		<Container
+			component={motion.section}
+			sx={{
+				py: { sm: 4, xs: 2 },
+			}}
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			transition={{ duration: 0.5 }}
+			ref={ref}
+		>
+			<Typography
 				sx={{
-					py: { sm: 4, xs: 2 },
+					textAlign: "center",
+					fontSize: "1.8rem",
 				}}
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
-				transition={{ duration: 0.5 }}
-				ref={ref}
+				variant="h2"
 			>
+				Selected projects
+			</Typography>
+
+			<Typography
+				sx={{
+					color: "text.disabled",
+					textAlign: "center",
+					marginBottom: "1.5rem",
+					fontSize: "1.2rem",
+				}}
+			>
+				Visit my{" "}
 				<Typography
 					sx={{
-						textAlign: "center",
-						fontSize: "1.8rem",
+						fontSize: "inherit",
+						color: "primary.main",
+						textDecoration: "underline",
 					}}
-					variant="h2"
+					component="span"
 				>
-					Selected projects
-				</Typography>
+					<Link to={"https://github.com/KostiaTrepyk"}>Github</Link>
+				</Typography>{" "}
+				to see more
+			</Typography>
 
-				<Typography
-					sx={{
-						color: "text.disabled",
-						textAlign: "center",
-						marginBottom: "1.5rem",
-						fontSize: "1.2rem",
-					}}
-				>
-					Visit my{" "}
-					<Typography
-						sx={{
-							fontSize: "inherit",
-							color: "primary.main",
-							textDecoration: "underline",
-						}}
-						component="span"
-					>
-						<Link to={"https://github.com/KostiaTrepyk"}>Github</Link>
-					</Typography>{" "}
-					to see more
-				</Typography>
-
-				<ProjectList>
-					{topProjects.map((project) => (
-						<ProjectListItem key={project.title} project={project} />
-					))}
-				</ProjectList>
-			</Container>
-		);
-	}
-);
+			<ProjectList>
+				{topProjects.map((project) => (
+					<ProjectListItem key={project.title} project={project} />
+				))}
+			</ProjectList>
+		</Container>
+	);
+});
 
 export default ProjectsSection;

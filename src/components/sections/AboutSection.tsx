@@ -154,14 +154,12 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>((_, ref) => {
 								textAlign: "justify",
 							}}
 						>
-							I am Kostia, an ambitious Fullstack Developer with a
-							passion for building efficient and scalable web
-							applications. My expertise spans the full modern
-							JavaScript ecosystem, focusing on React for the
-							frontend and NestJS for the backend. Driven by
-							continuous learning, I have successfully engineered
-							multiple pet projects, honing my skills in creating
-							robust architectures and seamless user experiences.
+							I am Kostia, an ambitious Fullstack Developer with a passion for
+							building efficient and scalable web applications. My expertise spans the
+							full modern JavaScript ecosystem, focusing on React for the frontend and
+							NestJS for the backend. Driven by continuous learning, I have
+							successfully engineered multiple pet projects, honing my skills in
+							creating robust architectures and seamless user experiences.
 						</Typography>
 					</Paper>
 				</Grid>

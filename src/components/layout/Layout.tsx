@@ -8,9 +8,7 @@ import Rain from "./Rain";
 
 const Layout = () => {
 	const [open, setOpen] = useState(false);
-	const isAlertDisabled = Boolean(
-		JSON.parse(localStorage.getItem("alert") || "false")
-	);
+	const isAlertDisabled = Boolean(JSON.parse(localStorage.getItem("alert") || "false"));
 
 	useEffect(() => {
 		let timeout: NodeJS.Timeout;

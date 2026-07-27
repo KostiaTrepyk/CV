@@ -13,8 +13,7 @@ export const quotes: IQuote[] = [
 		author: "Benjamin Franklin",
 	},
 	{
-		quote:
-			"If you're not prepared to be wrong, you'll never come up with anything original.",
+		quote: "If you're not prepared to be wrong, you'll never come up with anything original.",
 		author: "Ken Robinson",
 	},
 	{

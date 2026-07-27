@@ -5,9 +5,7 @@ import Quote from "./Quote";
 import AboutMe from "./AboutMe";
 
 const MeSection = () => {
-	const choosedPhrase: IQuote = quotes.at(
-		Math.round(Math.random() * (quotes.length - 1)),
-	)!;
+	const choosedPhrase: IQuote = quotes.at(Math.round(Math.random() * (quotes.length - 1)))!;
 
 	return (
 		<Container

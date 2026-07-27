@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-	Box,
-	Container,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-} from "@mui/material";
+import { Box, Container, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { contacts } from "data/contacts";
 
 import Wawes from "./Wawes/Wawes";

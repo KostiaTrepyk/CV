@@ -1,3 +1,3 @@
 import MeSection from "./MeSection";
 
-export default MeSection
+export default MeSection;

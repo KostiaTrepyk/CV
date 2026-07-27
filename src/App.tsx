@@ -5,11 +5,11 @@ import { ThemeProvider } from "@emotion/react";
 import { theme } from "core/Theme/theme";
 
 function App() {
-    return (
-        <ThemeProvider theme={theme}>
-            <RouterProvider router={router} />
-        </ThemeProvider>
-    );
+	return (
+		<ThemeProvider theme={theme}>
+			<RouterProvider router={router} />
+		</ThemeProvider>
+	);
 }
 
 export default App;

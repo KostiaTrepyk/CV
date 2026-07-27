@@ -8,15 +8,15 @@ import AboutPage from "pages/AboutPage";
 import ContactPage from "pages/ContactPage";
 
 const router = createHashRouter([
-    {
-        element: <Layout />,
-        errorElement: <ErrorPage />,
-        children: [
-            { path: "/", element: <HomePage /> },
-            { path: "/about", element: <AboutPage /> },
-            { path: "/contact", element: <ContactPage /> },
-        ],
-    },
+	{
+		element: <Layout />,
+		errorElement: <ErrorPage />,
+		children: [
+			{ path: "/", element: <HomePage /> },
+			{ path: "/about", element: <AboutPage /> },
+			{ path: "/contact", element: <ContactPage /> },
+		],
+	},
 ]);
 
 export { router };

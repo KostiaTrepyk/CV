@@ -39,13 +39,10 @@ export class RainAnimation {
 			90,
 			window.innerWidth / window.innerHeight,
 			0.1,
-			1000,
+			1000
 		);
 		this.scene = new THREE.Scene();
-		this.maxPosition = this.camera.getViewSize(
-			this.cameraPositionZ,
-			new THREE.Vector2(),
-		);
+		this.maxPosition = this.camera.getViewSize(this.cameraPositionZ, new THREE.Vector2());
 		this.renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 		this.raindrops = [];
 
@@ -118,10 +115,7 @@ export class RainAnimation {
 		this.raindropsCount = this.calculateRaindropCount();
 		this.camera.aspect = window.innerWidth / window.innerHeight;
 		this.camera.updateProjectionMatrix();
-		this.maxPosition = this.camera.getViewSize(
-			this.cameraPositionZ,
-			new THREE.Vector2(),
-		);
+		this.maxPosition = this.camera.getViewSize(this.cameraPositionZ, new THREE.Vector2());
 
 		this.rebuildRaindrops();
 	};
@@ -141,9 +135,7 @@ export class RainAnimation {
 			while (this.raindrops.length < this.raindropsCount) {
 				const raindrop = this.createRaindrop();
 				const { x, y } = this.getRandomStartPosition();
-				raindrop.rotateZ(
-					-THREE.MathUtils.degToRad(this.rainSettings.angle),
-				);
+				raindrop.rotateZ(-THREE.MathUtils.degToRad(this.rainSettings.angle));
 				raindrop.position.set(x, y, 0);
 				this.raindrops.push(raindrop);
 				this.scene.add(raindrop);
@@ -170,8 +162,6 @@ export class RainAnimation {
 	};
 
 	private calculateRaindropCount = (): number => {
-		return (
-			Math.round(this.size.x / 100) * this.rainSettings.countPer100Pixels
-		);
+		return Math.round(this.size.x / 100) * this.rainSettings.countPer100Pixels;
 	};
 }
